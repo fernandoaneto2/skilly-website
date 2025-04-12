@@ -1,0 +1,336 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Cores principais */
+:root {
+  --primary: #515153;
+  --secondary: #ffffff;
+  --accent: #3b82f6;
+  --background: #f8f9fa;
+  --hover: #797c80;
+}
+
+/* Body geral */
+body {
+  background-color: var(--background);
+  color: var(--primary);
+  line-height: 1.6;
+}
+div {
+  margin: 0 auto;
+  padding: 1rem;
+  height: 90vh;
+}
+
+/* Navbar */
+header {
+  background-color: var(--primary);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+nav img {
+  height: 40px;
+}
+
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--secondary);
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--hover);
+}
+
+/* Seções */
+
+#home {
+  background-image: url("/images/fundo-home.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--secondary);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 1rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+#home h1 {
+  color: var(--secondary);
+  font-size: 2.8rem;
+  max-width: 800px;
+  margin: 0 auto;
+
+  background: linear-gradient(
+    90deg,
+    #ffffff,
+    #9999a1,
+    #515153,
+    #9999a1,
+    #ffffff
+  );
+  background-size: 300% auto;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  animation: shine 8s ease-in-out infinite;
+
+  /* Brilho mais visível */
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.5), 0 0 20px rgba(81, 81, 83, 0.3);
+
+  /* Fallback para caso o gradiente falhe */
+  -webkit-text-fill-color: transparent;
+}
+.btn-download {
+  margin-top: 2rem;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  background: linear-gradient(135deg, #1c1f2b, #2e4a6f);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 20px rgba(46, 74, 111, 0.3);
+}
+
+.btn-download:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 24px rgba(46, 74, 111, 0.5);
+}
+
+/* Efeito de pulsar suave */
+@keyframes pulseGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 300% center;
+  }
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+  text-align: center;
+}
+
+p {
+  font-size: 1rem;
+  max-width: 700px;
+  text-align: justify;
+  color: var(--primary);
+  padding: 0 2rem;
+  line-height: 1.5;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilo base para cada seção */
+#sobre,
+#servicos,
+#suporte {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Overlay para dar contraste ao fundo */
+#sobre::before,
+#servicos::before,
+#suporte::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* fundo escurecido */
+  z-index: 0;
+}
+
+#sobre *,
+#servicos *,
+#suporte * {
+  z-index: 1;
+}
+
+/* Subtítulo */
+#sobre h2,
+#servicos h2,
+#suporte h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1.2rem;
+  color: var(--secondary);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Parágrafos */
+#sobre p,
+#servicos p,
+#suporte p {
+  font-size: 1.1rem;
+  max-width: 800px;
+  color: var(--secondary);
+  text-align: justify;
+  line-height: 1.8;
+  padding: 0 1rem;
+  animation: fadeInUp 1.5s ease-out;
+}
+
+/* Animação de entrada */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Link de contato */
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background-color: #25d366;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.3);
+  margin-top: 3rem; /* <-- Adiciona espaçamento para baixo */
+}
+
+.btn-whatsapp:hover {
+  background-color: #1ebe5d;
+  transform: scale(1.05);
+}
+
+.btn-whatsapp img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Rodapé */
+.footer {
+  background-color: #fff;
+  color: var(--primary);
+  padding: 1rem 1.5rem;
+  text-align: center;
+  border-top: 1px solid #ddd;
+  height: 30vh; /* Define a altura do rodapé como 30% da altura da tela */
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column; /* Alinha o conteúdo em coluna */
+  align-items: center; /* Centraliza o conteúdo */
+  justify-content: center; /* Alinha o conteúdo verticalmente */
+  height: 100%; /* Garante que o conteúdo ocupe a altura total do rodapé */
+}
+
+.footer p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: var(--primary);
+  text-align: center; /* Centraliza o texto */
+}
+
+.footer-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+  display: flex;
+  justify-content: center; /* Garante que os links fiquem alinhados em linha */
+  gap: 1.5rem; /* Espaçamento entre os links */
+}
+
+.footer-nav li {
+  display: inline; /* Garante que os itens da lista fiquem em linha */
+}
+
+.footer-nav li a {
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.footer-nav li a:hover {
+  color: #888;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  nav ul {
+    gap: 1rem;
+    font-size: 0.7rem;
+  }
+
+  #home h1 {
+    font-size: 2rem;
+  }
+  #home a {
+    font-size: 1rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}

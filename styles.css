@@ -6,6 +6,17 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Definindo fontes globais */
+body {
+  font-family: "Rock Salt", cursive; /* Aplica a fonte de estilo "giz" para o corpo do texto */
+}
+
+/* Aplicando a fonte Avallon Caps para os títulos */
+h1,
+h2 {
+  font-family: "Avallon", sans-serif; /* Aplica a fonte Avallon Caps para os títulos */
+}
+
 /* Cores principais */
 :root {
   --primary: #515153;
@@ -84,6 +95,7 @@ nav a:hover {
 }
 
 #home h1 {
+  font-family: "Rock Salt", cursive;
   color: var(--secondary);
   font-size: 2.8rem;
   max-width: 800px;
@@ -121,6 +133,7 @@ nav a:hover {
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 8px 20px rgba(46, 74, 111, 0.3);
+  text-decoration: none;
 }
 
 .btn-download:hover {
@@ -205,6 +218,7 @@ p {
 #sobre h2,
 #servicos h2,
 #suporte h2 {
+  font-family: "Rock Salt", cursive;
   font-size: 2.4rem;
   margin-bottom: 1.2rem;
   color: var(--secondary);
@@ -218,6 +232,7 @@ p {
 #sobre p,
 #servicos p,
 #suporte p {
+  font-family: "Quicksand", sans-serif;
   font-size: 1.1rem;
   max-width: 800px;
   color: var(--secondary);

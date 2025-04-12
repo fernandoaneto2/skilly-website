@@ -112,21 +112,12 @@ nav a:hover {
   background-size: 300% auto;
   color: transparent;
   background-clip: text;
-  -webkit-background-clip: text;
-
-  animation: shine 8s ease-in-out infinite;
-
-  /* Brilho mais visível */
-  text-shadow: 0 0 12px rgba(255, 255, 255, 0.5), 0 0 20px rgba(81, 81, 83, 0.3);
-
-  /* Fallback para caso o gradiente falhe */
-  -webkit-text-fill-color: transparent;
 }
 .btn-download {
   margin-top: 2rem;
   padding: 0.8rem 2rem;
   font-size: 1.1rem;
-  background: linear-gradient(135deg, #1c1f2b, #2e4a6f);
+  background: linear-gradient(35deg, var(--primary), var(--secondary));
   color: #fff;
   border: none;
   border-radius: 30px;
@@ -149,15 +140,6 @@ nav a:hover {
   }
   50% {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-  }
-}
-
-@keyframes shine {
-  0% {
-    background-position: 0% center;
-  }
-  100% {
-    background-position: 300% center;
   }
 }
 
